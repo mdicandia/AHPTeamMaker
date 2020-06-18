@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-players-list',
@@ -10,5 +10,5 @@ export class PlayersListComponent {
   //   { name: 'manu ginobili', height: '6.6', position: 'sg'} ,
   //   { name: 'luka doncic', height: '6.8', position: 'sg' }
   // ];
-    players = [];
+    @Input() players = [];
 }
