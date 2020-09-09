@@ -11,7 +11,7 @@
     <mat-nav-list>
       <a mat-list-item [routerLink]="['/playercreation']" routerLinkActive="router-link-active" >Create a Player</a>
       <a mat-list-item [routerLink]="['/playerslist']" routerLinkActive="router-link-active" >List of Players</a>
-      <a mat-list-item href="#">Make your team</a>
+      <a mat-list-item [routerLink]="['/teamgenerator']" routerLinkActive="router-link-active" >Team Generator</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -29,7 +29,7 @@
       <span *ngIf="!(isHandset$ | async)">
       <a [routerLink]="['/playercreation']" routerLinkActive="router-link-active" >Create a Player</a>
       <a mat-list-item [routerLink]="['/playerslist']" routerLinkActive="router-link-active" >List of Players</a>
-      <a href="#">Make your team</a>
+      <a mat-list-item [routerLink]="['/teamgenerator']" routerLinkActive="router-link-active" >Team Generator</a>
       </span>
     </mat-toolbar>
     <ng-content></ng-content>

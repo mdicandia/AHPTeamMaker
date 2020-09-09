@@ -5,7 +5,6 @@ import { ConnectionService } from 'src/app/connection.service';
 
 interface Position {
   value: string;
-  viewValue: string;
 }
 
 interface Skills {
@@ -16,12 +15,12 @@ interface Skills {
 export interface Player {
   name: string;
   position: string;
-  oskills: number;
-  dskills: number;
   pskills: number;
   sskills: number;
   bskills: number;
   rskills: number;
+  stskills: number;
+  ptskills: number;
 }
 
 
@@ -34,18 +33,18 @@ export class PlayerCreateComponent {
   form: FormGroup;
   @Output() playercreated = new EventEmitter();
   positions: Position[] = [
-    {value: 'pg-0', viewValue: 'PG'},
-    {value: 'sg-1', viewValue: 'SG'},
-    {value: 'sf-2', viewValue: 'SF'},
-    {value: 'pf-3', viewValue: 'PF'},
-    {value: 'c-4', viewValue: 'C'}
+    {value: 'PG'},
+    {value: 'SG'},
+    {value: 'SF'},
+    {value: 'PF'},
+    {value: 'C'}
   ];
   skills: Skills[] = [
-    {value: 1, viewValue: 'Pesima'},
-    {value: 2, viewValue: 'Mala'},
-    {value: 3, viewValue: 'Normal'},
-    {value: 4, viewValue: 'Buena'},
-    {value: 5, viewValue: 'Excelente'},
+    {value: 1, viewValue: 'Normal'},
+    {value: 3, viewValue: 'Sobresaliente'},
+    {value: 5, viewValue: 'Buena'},
+    {value: 7, viewValue: 'Muy Buena'},
+    {value: 9, viewValue: 'Excelente'},
   ];
 
   constructor(private formBuilder: FormBuilder, private connectionService: ConnectionService) {
@@ -56,12 +55,12 @@ export class PlayerCreateComponent {
     this.form = this.formBuilder.group({
       name: [null],
       position: [],
-      oskills: [],
-      dskills: [],
       pskills: [],
       sskills: [],
       bskills: [],
       rskills: [],
+      stskills: [],
+      ptskills: []
     });
   }
   onSavePlayer() {
@@ -69,12 +68,12 @@ export class PlayerCreateComponent {
     let player: Player = {
       name: this.form.value.name, 
       position: this.form.value.position,
-      oskills: this.form.value.oskills,
-      dskills: this.form.value.dskills,
       pskills: this.form.value.pskills,
       sskills: this.form.value.sskills,
       bskills: this.form.value.bskills,
       rskills: this.form.value.rskills,
+      stskills: this.form.value.stskills,
+      ptskills: this.form.value.ptskills
     }
     this.connectionService.addPlayer(player).subscribe(
       res => console.log(res)

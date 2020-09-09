@@ -1,9 +1,15 @@
-<mat-accordion multi = "true" *ngIf="players.length > 0">
+<mat-accordion class="mat-typography" multi = "true" *ngIf="players.length > 0">
   <mat-expansion-panel *ngFor="let player of players">
       <mat-expansion-panel-header>
-        {{ player.name }}
+        <h2 class = mat-h2>{{ player.name }}</h2>
       </mat-expansion-panel-header>
-      <p> {{ player.position }}</p>
+      <p>Posicion: <span class = mat-body-strong> {{ player.position }} </span></p>
+      <p>Habilidad para pasar: <span class = mat-body-strong> {{ player.pskills }} </span></p>
+      <p>Habilidad para tirar:  <span class = mat-body-strong> {{ player.sskills }}</span></p>
+      <p>Habilidad para postearse: <span class = mat-body-strong>{{ player.ptskills }}</span></p>
+      <p>Habilidad para rebotear: <span class = mat-body-strong>{{ player.rskills }}</span></p>
+      <p>Habilidad para bloquear: <span class = mat-body-strong>{{ player.bskills }}</span></p>
+      <p>Habilidad para robar: <span class = mat-body-strong>{{ player.stskills }}</span></p>
   </mat-expansion-panel>
 </mat-accordion>
 <p class="mat-body-1" *ngIf="players.length <= 0"> No players yet</p>
