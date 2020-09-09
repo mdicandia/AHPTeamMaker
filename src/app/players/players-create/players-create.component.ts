@@ -16,12 +16,12 @@ interface Skills {
 export interface Player {
   name: string;
   position: string;
-  oskills: number;
-  dskills: number;
   pskills: number;
   sskills: number;
   bskills: number;
   rskills: number;
+  stskills: number;
+  ptskills: number;
 }
 
 
@@ -42,10 +42,10 @@ export class PlayerCreateComponent {
   ];
   skills: Skills[] = [
     {value: 1, viewValue: 'Pesima'},
-    {value: 2, viewValue: 'Mala'},
-    {value: 3, viewValue: 'Normal'},
-    {value: 4, viewValue: 'Buena'},
-    {value: 5, viewValue: 'Excelente'},
+    {value: 3, viewValue: 'Mala'},
+    {value: 5, viewValue: 'Normal'},
+    {value: 7, viewValue: 'Buena'},
+    {value: 9, viewValue: 'Excelente'},
   ];
 
   constructor(private formBuilder: FormBuilder, private connectionService: ConnectionService) {
@@ -56,12 +56,12 @@ export class PlayerCreateComponent {
     this.form = this.formBuilder.group({
       name: [null],
       position: [],
-      oskills: [],
-      dskills: [],
       pskills: [],
       sskills: [],
       bskills: [],
       rskills: [],
+      stskills: [],
+      ptskills: []
     });
   }
   onSavePlayer() {
@@ -69,12 +69,12 @@ export class PlayerCreateComponent {
     let player: Player = {
       name: this.form.value.name, 
       position: this.form.value.position,
-      oskills: this.form.value.oskills,
-      dskills: this.form.value.dskills,
       pskills: this.form.value.pskills,
       sskills: this.form.value.sskills,
       bskills: this.form.value.bskills,
       rskills: this.form.value.rskills,
+      stskills: this.form.value.stskills,
+      ptskills: this.form.value.ptskills
     }
     this.connectionService.addPlayer(player).subscribe(
       res => console.log(res)

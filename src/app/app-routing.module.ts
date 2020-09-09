@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlayerCreateComponent } from './players/players-create/players-create.component';
 import { PlayersListComponent } from './players/players-list/players-list.component';
+import { TeamGeneratorComponent } from './team/team-generator/team-generator.component';
 
 
 const routes: Routes = [
   { path: 'playercreation', component: PlayerCreateComponent},
-  { path: 'playerslist', component: PlayersListComponent}
+  { path: 'playerslist', component: PlayersListComponent},
+  { path: 'teamgenerator', component: TeamGeneratorComponent}
 ];
 
 @NgModule({
@@ -14,4 +16,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-export const routingComponents = [PlayerCreateComponent, PlayersListComponent];
+export const routingComponents = [PlayerCreateComponent, PlayersListComponent, TeamGeneratorComponent];

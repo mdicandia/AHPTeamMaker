@@ -3,7 +3,12 @@
       <mat-expansion-panel-header>
         {{ player.name }}
       </mat-expansion-panel-header>
-      <p> {{ player.position }}</p>
+      <p>Habilidad para pasar {{ player.pskills }}</p>
+      <p>Habilidad para tirar {{ player.sskills }}</p>
+      <p>Habilidad para postearse {{ player.ptskills }}</p>
+      <p>Habilidad para rebotear {{ player.rskills }}</p>
+      <p>Habilidad para bloquear {{ player.bskills }}</p>
+      <p>Habilidad para robar {{ player.stskills }}</p>
   </mat-expansion-panel>
 </mat-accordion>
 <p class="mat-body-1" *ngIf="players.length <= 0"> No players yet</p>

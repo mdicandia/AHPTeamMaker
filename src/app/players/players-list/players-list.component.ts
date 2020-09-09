@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ConnectionService } from 'src/app/connection.service';
 
 @Component({
   selector: 'app-players-list',
@@ -6,9 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./players-list.component.css']
 })
 export class PlayersListComponent {
-  // players = [
-  //   { name: 'manu ginobili', height: '6.6', position: 'sg'} ,
-  //   { name: 'luka doncic', height: '6.8', position: 'sg' }
-  // ];
+
+  constructor(private connectionService: ConnectionService) { }
     @Input() players = [];
+    ngOnInit() {
+      this.connectionService.getPlayers().subscribe(
+        jugadores => {this.players = jugadores}
+      )
+    }
 }
