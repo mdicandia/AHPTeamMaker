@@ -5,7 +5,6 @@ import { ConnectionService } from 'src/app/connection.service';
 
 interface Position {
   value: string;
-  viewValue: string;
 }
 
 interface Skills {
@@ -34,17 +33,18 @@ export class PlayerCreateComponent {
   form: FormGroup;
   @Output() playercreated = new EventEmitter();
   positions: Position[] = [
-    {value: 'pg-0', viewValue: 'PG'},
-    {value: 'sg-1', viewValue: 'SG'},
-    {value: 'sf-2', viewValue: 'SF'},
-    {value: 'pf-3', viewValue: 'PF'},
-    {value: 'c-4', viewValue: 'C'}
+    {value: 'PG'},
+    {value: 'SG'},
+    {value: 'SF'},
+    {value: 'PF'},
+    {value: 'C'}
   ];
   skills: Skills[] = [
-    {value: 1, viewValue: 'Pesima'},
-    {value: 3, viewValue: 'Mala'},
-    {value: 5, viewValue: 'Normal'},
-    {value: 7, viewValue: 'Buena'},
+
+    {value: 1, viewValue: 'Normal'},
+    {value: 3, viewValue: 'Sobresaliente'},
+    {value: 5, viewValue: 'Buena'},
+    {value: 7, viewValue: 'Muy Buena'},
     {value: 9, viewValue: 'Excelente'},
   ];
 
