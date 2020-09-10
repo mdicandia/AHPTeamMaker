@@ -40,6 +40,7 @@ export class PlayerCreateComponent {
     {value: 'C'}
   ];
   skills: Skills[] = [
+
     {value: 1, viewValue: 'Normal'},
     {value: 3, viewValue: 'Sobresaliente'},
     {value: 5, viewValue: 'Buena'},
