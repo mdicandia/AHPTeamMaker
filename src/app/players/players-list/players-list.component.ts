@@ -9,9 +9,7 @@ import { ConnectionService } from 'src/app/connection.service';
 })
 
 export class PlayersListComponent {
-
-  skills=  {1:'Normal',3:'Sobresaliente',5:'Buena',7:'Muy Buena',9:'Excelente'};
-
+  skills=  {1:'Normal',3:'Buena',5:'Muy Buena',7:'Excelente',9:'Sobresaliente'};
 
   constructor(private connectionService: ConnectionService) { }
     @Input() players = [];

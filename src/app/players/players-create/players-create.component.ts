@@ -40,12 +40,11 @@ export class PlayerCreateComponent {
     {value: 'C'}
   ];
   skills: Skills[] = [
-
     {value: 1, viewValue: 'Normal'},
-    {value: 3, viewValue: 'Sobresaliente'},
-    {value: 5, viewValue: 'Buena'},
-    {value: 7, viewValue: 'Muy Buena'},
-    {value: 9, viewValue: 'Excelente'},
+    {value: 3, viewValue: 'Buena'},
+    {value: 5, viewValue: 'Muy Buena'},
+    {value: 7, viewValue: 'Excelente'},
+    {value: 9, viewValue: 'Sobresaliente'},
   ];
 
   constructor(private formBuilder: FormBuilder, private connectionService: ConnectionService) {
@@ -79,6 +78,7 @@ export class PlayerCreateComponent {
     this.connectionService.addPlayer(player).subscribe(
       res => console.log(res)
     );
+    this.form.reset();
   }
 
 }

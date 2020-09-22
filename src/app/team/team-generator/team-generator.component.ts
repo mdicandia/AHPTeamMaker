@@ -33,11 +33,11 @@ export class TeamGeneratorComponent implements OnInit {
   arrayJugadores;
   @Output() teamcriteriasent = new EventEmitter();
   scale: SattyScale[] = [
+    {value: 1/5, description: 'Importancia muy pequeña'},
+    {value: 1/3, description: 'Importancia pequeña'},
     {value: 1, description: 'Igual Importancia'},
-    {value: 3, description: 'Importancia Moderada'},
-    {value: 5, description: 'Importancia Grande'},
-    {value: 7, description: 'Importancia Muy Grande'},
-    {value: 9, description: 'Importancia Extrema'},
+    {value: 3, description: 'Importancia Grande'},
+    {value: 5, description: 'Importancia muy Grande'},
   ];
 
   tipo: tipoEquipo[] = [
